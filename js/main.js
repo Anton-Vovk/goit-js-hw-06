@@ -1,4 +1,4 @@
-import users from './users.js';
+import users from './js/users.js';
 
 // Задание 1 Получить массив имен всех пользователей (поле name).
 
@@ -87,14 +87,15 @@ console.log(getNamesSortedByFriendsCount(users));
 const getSortedUniqueSkills = users => {
   return users
     .reduce((acc, user) => {
-      user.skills.forEach((skill) =>
-        acc.includes(skill) ? '' : acc.push(skill)
+      user.skills.forEach(skill =>
+        acc.includes(skill) ? '' : acc.push(skill),
       );
       return acc;
     }, [])
-    
+
     .sort();
 };
+
 console.log(getSortedUniqueSkills(users));
-// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure',
 //'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
