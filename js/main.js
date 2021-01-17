@@ -1,4 +1,4 @@
-import users from './js/users.js';
+import users from './users.js';
 
 // Задание 1 Получить массив имен всех пользователей (поле name).
 
@@ -19,7 +19,9 @@ console.log(getUsersWithEyeColor(users, 'blue'));
 // Задание 3 Получить массив имен пользователей по полу (поле gender).
 
 const getUsersWithGender = (users, gender) => {
-  return users.filter(user => user.gender === gender).map(user => user.name);
+  return users
+    .filter(user => user.gender === gender)
+    .map(user => user.name);
 };
 
 console.log(getUsersWithGender(users, 'male'));
@@ -53,7 +55,7 @@ console.log(getUsersWithAge(users, 30, 40)); // [объект Moore Hensley, о�
 // Задание 7 Получить общую сумму баланса (поле balance) всех пользователей.
 
 const calculateTotalBalance = users => {
-  return users.map(user => user.balance).reduce((acc, value) => acc + value, 0);
+  return users.reduce((acc, user) => acc + user.balance, 0);
 };
 
 console.log(calculateTotalBalance(users)); // 20916
